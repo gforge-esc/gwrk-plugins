@@ -1,0 +1,12 @@
+type: skill
+name: clap-standards
+version: 1.0.0
+description: Rust Clap derive subcommand, exit code, and output stream standards
+tier: enforcement
+scope: all
+language: Rust
+framework: Clap
+tags:
+  - clap
+  - rust
+  - cli

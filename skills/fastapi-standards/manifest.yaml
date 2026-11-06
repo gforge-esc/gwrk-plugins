@@ -1,0 +1,12 @@
+type: skill
+name: fastapi-standards
+version: 1.0.0
+description: FastAPI Pydantic v2 validation, dependency injection, and async route standards
+tier: enforcement
+scope: all
+language: Python
+framework: FastAPI
+tags:
+  - fastapi
+  - python
+  - api

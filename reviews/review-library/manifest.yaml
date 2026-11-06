@@ -1,0 +1,30 @@
+type: review
+name: review-library
+version: 1.0.0
+description: Reusable Library and SDK Review Strategy
+projectType: library
+codeReviewWorkflow: review-code-cli
+uatReviewWorkflow: review-uat-cli
+steps:
+  code:
+    - id: lint
+      title: Linting
+      description: Check for lint and formatting errors
+      required: true
+    - id: types
+      title: Public API Types
+      description: Verify exported type declarations and signatures
+      required: true
+    - id: tests
+      title: Unit Tests
+      description: Run library unit and property tests
+      required: true
+  uat:
+    - id: exports
+      title: Package Export Surface
+      description: Verify entrypoint exports and module resolution
+      required: true
+    - id: compatibility
+      title: SemVer Compatibility
+      description: Verify no unintended breaking changes in public symbols
+      required: true

@@ -1,0 +1,33 @@
+type: agent
+name: aider
+version: 1.0.0
+description: Aider pair-programming CLI adapter
+adapter: ./adapter.js
+dispatchMode: local-cli
+contextFileName: CONVENTIONS.md
+invocation:
+  command: aider
+  args: ["--yes-always", "--no-auto-commits", "--no-pretty", "--message-file", "-"]
+  headlessFlag: "--message-file"
+  yoloFlag: "--yes-always"
+capabilities:
+  - code-generation
+  - refactoring
+  - git-aware-editing
+models:
+  default: sonnet
+  fast: haiku
+  pro: opus
+exitCodeMap:
+  "0":
+    exitCode: 0
+  "1":
+    exitCode: 1
+    errorType: gate_failure
+  "2":
+    exitCode: 2
+    errorType: usage_error
+  "127":
+    exitCode: 127
+    errorType: not_found
+managedConfig: []

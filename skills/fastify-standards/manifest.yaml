@@ -1,0 +1,12 @@
+type: skill
+name: fastify-standards
+version: 1.0.0
+description: Fastify plugin encapsulation, schema validation, and lifecycle standards
+tier: enforcement
+scope: all
+language: TypeScript
+framework: Fastify
+tags:
+  - fastify
+  - typescript
+  - api

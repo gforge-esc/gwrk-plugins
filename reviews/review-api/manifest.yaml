@@ -1,0 +1,30 @@
+type: review
+name: review-api
+version: 1.0.0
+description: API and Backend Service Review Strategy
+projectType: api
+codeReviewWorkflow: review-code-cli
+uatReviewWorkflow: review-uat-cli
+steps:
+  code:
+    - id: lint
+      title: Linting
+      description: Check for lint and formatting errors
+      required: true
+    - id: types
+      title: Type and Schema Check
+      description: Verify static types and request or response schemas
+      required: true
+    - id: tests
+      title: Unit Tests
+      description: Run domain and handler unit tests
+      required: true
+  uat:
+    - id: contracts
+      title: API Contract Verification
+      description: Verify status codes, payload validation, and error envelopes
+      required: true
+    - id: security
+      title: Auth and Boundary Checks
+      description: Verify authentication guards, rate limits, and input limits
+      required: true

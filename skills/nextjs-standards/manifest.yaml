@@ -1,0 +1,12 @@
+type: skill
+name: nextjs-standards
+version: 1.0.0
+description: Next.js App Router and Server Component enforcement standards
+tier: enforcement
+scope: all
+language: TypeScript
+framework: Next.js
+tags:
+  - nextjs
+  - react
+  - typescript

@@ -1,0 +1,12 @@
+type: skill
+name: express-standards
+version: 1.0.0
+description: Express middleware ordering, request validation, and error handling standards
+tier: enforcement
+scope: all
+language: TypeScript
+framework: Express
+tags:
+  - express
+  - typescript
+  - api

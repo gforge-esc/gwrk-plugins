@@ -1,0 +1,12 @@
+type: skill
+name: django-standards
+version: 1.0.0
+description: Django ORM query hygiene, service boundaries, and migration standards
+tier: enforcement
+scope: all
+language: Python
+framework: Django
+tags:
+  - django
+  - python
+  - orm

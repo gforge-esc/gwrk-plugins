@@ -1,0 +1,32 @@
+type: agent
+name: opencode
+version: 1.0.0
+description: OpenCode CLI agent adapter
+adapter: ./adapter.js
+dispatchMode: local-cli
+contextFileName: AGENTS.md
+invocation:
+  command: opencode
+  args: ["run", "--format", "json"]
+  headlessFlag: "run"
+capabilities:
+  - code-generation
+  - refactoring
+  - analysis
+models:
+  default: anthropic/claude-sonnet-4-5
+  fast: anthropic/claude-haiku-4-5
+  pro: anthropic/claude-opus-4-5
+exitCodeMap:
+  "0":
+    exitCode: 0
+  "1":
+    exitCode: 1
+    errorType: gate_failure
+  "2":
+    exitCode: 2
+    errorType: usage_error
+  "127":
+    exitCode: 127
+    errorType: not_found
+managedConfig: []

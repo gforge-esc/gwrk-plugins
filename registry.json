@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-06T02:12:31.255Z",
+  "plugins": {
+    "aider": {
+      "name": "aider",
+      "type": "agent",
+      "latest": "1.0.0",
+      "description": "Aider pair-programming CLI adapter",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "agents/aider",
+          "sha256": "f468e4ff1b62856aa133400d893e287b3e21c305778dca302d6e21f887d04bdb"
+        }
+      }
+    },
+    "cursor-agent": {
+      "name": "cursor-agent",
+      "type": "agent",
+      "latest": "1.0.0",
+      "description": "Cursor headless CLI agent adapter",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "agents/cursor-agent",
+          "sha256": "18c887782852cc416ce6848e1ab488f865da90f4dc7cc374b04dfbd6f657bf17"
+        }
+      }
+    },
+    "gemini": {
+      "name": "gemini",
+      "type": "agent",
+      "latest": "1.0.0",
+      "description": "Google Gemini CLI standalone adapter",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "agents/gemini",
+          "sha256": "ec89e185740434b4c72373aec43aba89074fb981229e602d3e4c5b23cf9e496a"
+        }
+      }
+    },
+    "goose": {
+      "name": "goose",
+      "type": "agent",
+      "latest": "1.0.0",
+      "description": "Block Goose CLI autonomous developer agent adapter",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "agents/goose",
+          "sha256": "1e293488b338f59345d3d75bf9644bbeae81aeb9c702bec46f2d3287d0efad6f"
+        }
+      }
+    },
+    "opencode": {
+      "name": "opencode",
+      "type": "agent",
+      "latest": "1.0.0",
+      "description": "OpenCode CLI agent adapter",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "agents/opencode",
+          "sha256": "21c9e631cf79ac4405c88e6bd8840ff48dba1f5a98b84700f05164a6f6aa2a9e"
+        }
+      }
+    },
+    "axum-standards": {
+      "name": "axum-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Rust Axum extractor ordering, shared state, and IntoResponse error standards",
+      "language": "Rust",
+      "framework": "Axum",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/axum-standards",
+          "sha256": "8aa733044cdb690913079063656b814853723dc664e4bacc409e5b4f52243d69"
+        }
+      }
+    },
+    "chi-standards": {
+      "name": "chi-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Go Chi stdlib HTTP handler composition, middleware, and context standards",
+      "language": "Go",
+      "framework": "Chi",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/chi-standards",
+          "sha256": "6eff10da4aa5db0cae00b1e51e9aa09ea686c26c2aeaabb0ba99a99cab4a933a"
+        }
+      }
+    },
+    "clap-standards": {
+      "name": "clap-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Rust Clap derive subcommand, exit code, and output stream standards",
+      "language": "Rust",
+      "framework": "Clap",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/clap-standards",
+          "sha256": "e68a92fabca19ce76e04a3ee9355e49d95cabeba3100ec1f22336a23bf9906fe"
+        }
+      }
+    },
+    "django-standards": {
+      "name": "django-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Django ORM query hygiene, service boundaries, and migration standards",
+      "language": "Python",
+      "framework": "Django",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/django-standards",
+          "sha256": "fe85ef0da38a7554c6f4eab602db3a037a063e351daa962ed065d316a02f0e16"
+        }
+      }
+    },
+    "express-standards": {
+      "name": "express-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Express middleware ordering, request validation, and error handling standards",
+      "language": "TypeScript",
+      "framework": "Express",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/express-standards",
+          "sha256": "0fff45a0a79b1e5b011ac20f0a153fc0d013ee0a85a72f2826f443f2e13ccb25"
+        }
+      }
+    },
+    "fastapi-standards": {
+      "name": "fastapi-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "FastAPI Pydantic v2 validation, dependency injection, and async route standards",
+      "language": "Python",
+      "framework": "FastAPI",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/fastapi-standards",
+          "sha256": "dfd012ac12a74799247ac01d98ff31e6b62657f76dff99107479e990c6b8553c"
+        }
+      }
+    },
+    "fastify-standards": {
+      "name": "fastify-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Fastify plugin encapsulation, schema validation, and lifecycle standards",
+      "language": "TypeScript",
+      "framework": "Fastify",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/fastify-standards",
+          "sha256": "06c83c52a4eb83cf8e6ceaa329210d8fba1b9e534c37363faa80154ede8180aa"
+        }
+      }
+    },
+    "gin-standards": {
+      "name": "gin-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Go Gin HTTP handler binding, context propagation, and error standards",
+      "language": "Go",
+      "framework": "Gin",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/gin-standards",
+          "sha256": "1dac355534ef43a82ab4aa73e6ba546b7229cf1189e83c16fa84a5135bcf84b3"
+        }
+      }
+    },
+    "nextjs-standards": {
+      "name": "nextjs-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "Next.js App Router and Server Component enforcement standards",
+      "language": "TypeScript",
+      "framework": "Next.js",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/nextjs-standards",
+          "sha256": "4c937904887fe0cff453f06716d7109ea166355a5a4fa65ba64663b545575c4e"
+        }
+      }
+    },
+    "react-standards": {
+      "name": "react-standards",
+      "type": "skill",
+      "tier": "enforcement",
+      "latest": "1.0.0",
+      "description": "React component composition, state, and accessibility enforcement standards",
+      "language": "TypeScript",
+      "framework": "React",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "skills/react-standards",
+          "sha256": "0e1c436aa1b3ba53228aed35ed31e013911b69bbb78c41732ff29f8bbffbc75e"
+        }
+      }
+    },
+    "review-api": {
+      "name": "review-api",
+      "type": "review",
+      "latest": "1.0.0",
+      "description": "API and Backend Service Review Strategy",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "reviews/review-api",
+          "sha256": "8c0eadd7c0fac731c673e66e06c80ecfe97762b8d9a66be6b834d49df3706e28"
+        }
+      }
+    },
+    "review-library": {
+      "name": "review-library",
+      "type": "review",
+      "latest": "1.0.0",
+      "description": "Reusable Library and SDK Review Strategy",
+      "versions": {
+        "1.0.0": {
+          "version": "1.0.0",
+          "path": "reviews/review-library",
+          "sha256": "429355993d88fd0c2afa72403ea5f6bf7e90b97be1b0a4c41b6b8c0a9b94bc63"
+        }
+      }
+    }
+  }
+}

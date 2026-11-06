@@ -1,0 +1,33 @@
+type: agent
+name: cursor-agent
+version: 1.0.0
+description: Cursor headless CLI agent adapter
+adapter: ./adapter.js
+dispatchMode: local-cli
+contextFileName: AGENTS.md
+invocation:
+  command: cursor-agent
+  args: ["-p", "Follow the instructions provided on stdin.", "--force", "--output-format", "stream-json"]
+  headlessFlag: "-p"
+  yoloFlag: "--force"
+capabilities:
+  - code-generation
+  - refactoring
+  - analysis
+models:
+  default: claude-4-sonnet
+  fast: cursor-small
+  pro: claude-4-opus
+exitCodeMap:
+  "0":
+    exitCode: 0
+  "1":
+    exitCode: 1
+    errorType: gate_failure
+  "2":
+    exitCode: 2
+    errorType: usage_error
+  "127":
+    exitCode: 127
+    errorType: not_found
+managedConfig: []
