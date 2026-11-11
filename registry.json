@@ -1,30 +1,30 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T14:53:25.224Z",
+  "generatedAt": "2026-11-11T19:15:58.549Z",
   "plugins": {
     "aider": {
       "name": "aider",
       "type": "agent",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Aider pair-programming CLI adapter",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "agents/aider",
-          "sha256": "f468e4ff1b62856aa133400d893e287b3e21c305778dca302d6e21f887d04bdb"
+          "sha256": "e39a37ff39ef485c52293b3cfd02cd6dad573eddba85583a617985f99b1bfbe0"
         }
       }
     },
     "cursor-agent": {
       "name": "cursor-agent",
       "type": "agent",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Cursor headless CLI agent adapter",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "agents/cursor-agent",
-          "sha256": "18c887782852cc416ce6848e1ab488f865da90f4dc7cc374b04dfbd6f657bf17"
+          "sha256": "d87433fbbcd4c5cf20881b8dc68537bafc452024b7a08bb7c4ec83da483e7799"
         }
       }
     },
@@ -44,13 +44,13 @@
     "opencode": {
       "name": "opencode",
       "type": "agent",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "OpenCode CLI agent adapter",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "agents/opencode",
-          "sha256": "21c9e631cf79ac4405c88e6bd8840ff48dba1f5a98b84700f05164a6f6aa2a9e"
+          "sha256": "53300b48da459228c73686c43bf4c392a11eccc92a66aa2957bdb2529af2e4a8"
         }
       }
     },
