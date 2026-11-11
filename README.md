@@ -13,6 +13,10 @@ Official plugin registry for `gwrk`. All plugins validate against `AnyManifestSc
 
 Antigravity CLI (`agy`) ships with gwrk. If you installed the retired `gemini` backend, run `gwrk plugin remove gemini`. Run `gwrk init` in each affected project and select `agy`. Review old model pins against `agy models`.
 
+## Model Discovery
+
+Aider lists model IDs for OpenAI, Anthropic and Gemini. OpenCode reads the catalog for the current project. Cursor reads the catalog on CLI versions that expose model listing. Configure explicit model IDs for other providers or CLI versions with no catalog.
+
 ## Framework Enforcement Skills
 
 | Plugin | Language | Framework | Scope |
