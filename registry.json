@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T14:53:25.224Z",
+  "generatedAt": "2026-11-11T16:31:14.449Z",
   "plugins": {
     "aider": {
       "name": "aider",
@@ -31,13 +31,13 @@
     "goose": {
       "name": "goose",
       "type": "agent",
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "description": "Block Goose CLI autonomous developer agent adapter",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.0.1": {
+          "version": "1.0.1",
           "path": "agents/goose",
-          "sha256": "1e293488b338f59345d3d75bf9644bbeae81aeb9c702bec46f2d3287d0efad6f"
+          "sha256": "fb5794fd90091cd47e2005e464e919b3dd4cbb477df0fd40fd907ae743e17252"
         }
       }
     },

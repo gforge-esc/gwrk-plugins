@@ -1,6 +1,6 @@
 type: agent
 name: goose
-version: 1.0.0
+version: 1.0.1
 description: Block Goose CLI autonomous developer agent adapter
 adapter: ./adapter.js
 dispatchMode: local-cli
