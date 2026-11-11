@@ -7,7 +7,12 @@ const execFileAsync = promisify(execFile);
 
 export class CursorAgentAdapter {
   name = "cursor-agent";
+  supportsModelForwarding = true;
   contextFileName = "AGENTS.md";
+
+  constructor(runCatalogCommand = execFileAsync) {
+    this.runCatalogCommand = runCatalogCommand;
+  }
 
   async isAvailable() {
     try {
@@ -16,6 +21,35 @@ export class CursorAgentAdapter {
     } catch {
       return false;
     }
+  }
+
+  async discoverModels({ projectRoot } = {}) {
+    const options = { cwd: projectRoot, timeout: 10_000, maxBuffer: 1_048_576 };
+    const { stdout: help } = await this.runCatalogCommand("cursor-agent", ["--help"], options);
+    const args = /(?:^|\s)--list-models(?:\s|$)/m.test(help)
+      ? ["--list-models"]
+      : /^\s+models\s+/m.test(help) ? ["models"] : null;
+    if (!args) return [];
+
+    const { stdout } = await this.runCatalogCommand("cursor-agent", args, options);
+    const models = new Map();
+    for (const line of stdout.split("\n")) {
+      const modelId = line.match(/^\s*(?:-\s+)?([a-z0-9][a-z0-9._-]*)(?=\s|$)/i)?.[1];
+      if (!modelId || /^(auto|default|latest|unknown)$/i.test(modelId)) continue;
+      const id = modelId.toLowerCase();
+      const provider = id.startsWith("claude-") ? "anthropic"
+        : id.startsWith("gemini-") ? "google"
+        : /^(?:gpt-|o\d)/.test(id) ? "openai" : "unknown";
+      if (provider === "unknown" && !/^\s*-\s+/.test(line)) continue;
+      const family = provider === "anthropic" ? "claude"
+        : provider === "google" ? "gemini"
+        : provider === "openai" ? (/^o\d/.test(id) ? "o-series" : "gpt") : "unknown";
+      models.set(modelId, {
+        backend: this.name, provider, family, modelId,
+        supportedEfforts: [], isDefault: false, hidden: false,
+      });
+    }
+    return [...models.values()];
   }
 
   async syncGovernance(projectRoot, governance) {
@@ -37,9 +71,7 @@ export class CursorAgentAdapter {
     if (task.model && task.model !== "default") {
       args.push("--model", task.model);
     }
-    const stdin = task.stdin
-      ? `${task.stdin}\n\n${task.prompt}`
-      : task.prompt;
+    const stdin = [...new Set([task.stdin, task.prompt].filter(Boolean))].join("\n\n");
     return {
       command: "cursor-agent",
       args,
