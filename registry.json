@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T14:53:25.224Z",
+  "generatedAt": "2026-11-11T19:41:48.249Z",
   "plugins": {
     "aider": {
       "name": "aider",
@@ -58,15 +58,15 @@
       "name": "axum-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Rust Axum extractor ordering, shared state, and IntoResponse error standards",
       "language": "Rust",
       "framework": "Axum",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/axum-standards",
-          "sha256": "8aa733044cdb690913079063656b814853723dc664e4bacc409e5b4f52243d69"
+          "sha256": "8e6430980f4d7a068b35b1793e1d653b62bf96fea53d609d5f491be083cce4fa"
         }
       }
     },
@@ -74,15 +74,15 @@
       "name": "chi-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Go Chi stdlib HTTP handler composition, middleware, and context standards",
       "language": "Go",
       "framework": "Chi",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/chi-standards",
-          "sha256": "6eff10da4aa5db0cae00b1e51e9aa09ea686c26c2aeaabb0ba99a99cab4a933a"
+          "sha256": "b655af2811c4278f4f8e5588b8fdbbc7fae754fd64258171cca5408642b06964"
         }
       }
     },
@@ -90,15 +90,15 @@
       "name": "clap-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Rust Clap derive subcommand, exit code, and output stream standards",
       "language": "Rust",
       "framework": "Clap",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/clap-standards",
-          "sha256": "e68a92fabca19ce76e04a3ee9355e49d95cabeba3100ec1f22336a23bf9906fe"
+          "sha256": "7e3805d4c5e493ab9de5b172d9934ee4adaf9e20c5402fc1e6167b428f16b426"
         }
       }
     },
@@ -106,15 +106,15 @@
       "name": "django-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Django ORM query hygiene, service boundaries, and migration standards",
       "language": "Python",
       "framework": "Django",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/django-standards",
-          "sha256": "fe85ef0da38a7554c6f4eab602db3a037a063e351daa962ed065d316a02f0e16"
+          "sha256": "c7ec2f0ee25da51eb9dc4813f139e6e18ea82bf6eafde13de0d02fe023ec14fa"
         }
       }
     },
@@ -122,15 +122,15 @@
       "name": "express-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Express middleware ordering, request validation, and error handling standards",
       "language": "TypeScript",
       "framework": "Express",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/express-standards",
-          "sha256": "0fff45a0a79b1e5b011ac20f0a153fc0d013ee0a85a72f2826f443f2e13ccb25"
+          "sha256": "4b5928b9c823c006e89fe667f9da3b55966ae4f436419dbef9fc4179e0a53674"
         }
       }
     },
@@ -138,15 +138,15 @@
       "name": "fastapi-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "FastAPI Pydantic v2 validation, dependency injection, and async route standards",
       "language": "Python",
       "framework": "FastAPI",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/fastapi-standards",
-          "sha256": "dfd012ac12a74799247ac01d98ff31e6b62657f76dff99107479e990c6b8553c"
+          "sha256": "b3b4226bd282c346ece25d22cd5c3746b98e4d64f7b5fd6f0f4f4fb08899528a"
         }
       }
     },
@@ -154,15 +154,15 @@
       "name": "fastify-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Fastify plugin encapsulation, schema validation, and lifecycle standards",
       "language": "TypeScript",
       "framework": "Fastify",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/fastify-standards",
-          "sha256": "06c83c52a4eb83cf8e6ceaa329210d8fba1b9e534c37363faa80154ede8180aa"
+          "sha256": "77875a8fe9d493f85dc9d26de55c78ab837ac1d562bfca4b6e749afd6eaac6c7"
         }
       }
     },
@@ -170,15 +170,15 @@
       "name": "gin-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Go Gin HTTP handler binding, context propagation, and error standards",
       "language": "Go",
       "framework": "Gin",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/gin-standards",
-          "sha256": "1dac355534ef43a82ab4aa73e6ba546b7229cf1189e83c16fa84a5135bcf84b3"
+          "sha256": "8b21a5c0555bcf596344d55da5ab11d4759821bb4f17f4db788f1300c429d8fe"
         }
       }
     },
@@ -186,15 +186,15 @@
       "name": "nextjs-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "Next.js App Router and Server Component enforcement standards",
       "language": "TypeScript",
       "framework": "Next.js",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/nextjs-standards",
-          "sha256": "4c937904887fe0cff453f06716d7109ea166355a5a4fa65ba64663b545575c4e"
+          "sha256": "874b176c4e7026dd835d7b4e05cc1b3461b4bbdd10dfa2a80207e7a18294c863"
         }
       }
     },
@@ -202,15 +202,15 @@
       "name": "react-standards",
       "type": "skill",
       "tier": "enforcement",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "description": "React component composition, state, and accessibility enforcement standards",
       "language": "TypeScript",
       "framework": "React",
       "versions": {
-        "1.0.0": {
-          "version": "1.0.0",
+        "1.1.0": {
+          "version": "1.1.0",
           "path": "skills/react-standards",
-          "sha256": "0e1c436aa1b3ba53228aed35ed31e013911b69bbb78c41732ff29f8bbffbc75e"
+          "sha256": "fc5ae4e4504dc75586c24c843ed44c2dd6acf01ffea62800a547bcbda92ac9dc"
         }
       }
     },

@@ -1,6 +1,6 @@
 type: skill
 name: axum-standards
-version: 1.0.0
+version: 1.1.0
 description: Rust Axum extractor ordering, shared state, and IntoResponse error standards
 tier: enforcement
 scope: all

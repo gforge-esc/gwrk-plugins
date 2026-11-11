@@ -14,3 +14,11 @@ Express routes must validate incoming payloads via middleware before invoking bu
 - Forward async errors to the central four-argument error middleware.
 - Never leak stack traces or internal error messages in production responses.
 - Set explicit body size limits on `express.json()` and `express.urlencoded()`.
+
+## Hexagonal Architecture
+
+Apply these rules when the project selects hexagonal architecture with a functional core.
+
+- Convert validated request data to use case inputs in route handlers. Map application outcomes to HTTP in the handler or error middleware.
+- Pass persistence and service ports into use cases from the server entry point.
+- Test domain rules with plain values and fake ports. Use HTTP tests for middleware order and response mapping.
