@@ -6,11 +6,12 @@ Official plugin registry for `gwrk`. All plugins validate against `AnyManifestSc
 
 | Plugin | CLI Binary | Context File | Capabilities |
 |---|---|---|---|
-| `gemini` | `gemini` | `GEMINI.md` | `code-editing`, `shell-exec`, `file-write`, `test-runner`, `git-ops` |
 | `aider` | `aider` | `CONVENTIONS.md` | `code-editing`, `file-write`, `git-ops` |
 | `cursor-agent` | `cursor-agent` | `.cursorrules` | `code-editing`, `shell-exec`, `file-write`, `test-runner`, `git-ops` |
 | `opencode` | `opencode` | `AGENTS.md` | `code-editing`, `shell-exec`, `file-write`, `test-runner`, `git-ops` |
 | `goose` | `goose` | `.goosehints` | `code-editing`, `shell-exec`, `file-write`, `test-runner`, `git-ops` |
+
+Antigravity CLI (`agy`) ships with gwrk. If you installed the retired `gemini` backend, run `gwrk plugin remove gemini`. Run `gwrk init` in each affected project and select `agy`. Review old model pins against `agy models`.
 
 ## Framework Enforcement Skills
 
