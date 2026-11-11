@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T19:15:58.549Z",
+  "generatedAt": "2026-11-11T19:21:59.119Z",
   "plugins": {
     "aider": {
       "name": "aider",
@@ -24,7 +24,7 @@
         "1.1.0": {
           "version": "1.1.0",
           "path": "agents/cursor-agent",
-          "sha256": "d87433fbbcd4c5cf20881b8dc68537bafc452024b7a08bb7c4ec83da483e7799"
+          "sha256": "81c0e889d31816596820879e1a35a94b61725005b8ce5e37cba0be5ff39ca4a8"
         }
       }
     },
