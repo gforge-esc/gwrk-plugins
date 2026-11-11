@@ -35,14 +35,15 @@ export class CursorAgentAdapter {
     const models = new Map();
     for (const line of stdout.split("\n")) {
       const modelId = line.match(/^\s*(?:-\s+)?([a-z0-9][a-z0-9._-]*)(?=\s|$)/i)?.[1];
-      if (!modelId) continue;
+      if (!modelId || /^(auto|default|latest|unknown)$/i.test(modelId)) continue;
       const id = modelId.toLowerCase();
       const provider = id.startsWith("claude-") ? "anthropic"
         : id.startsWith("gemini-") ? "google"
-        : /^(?:gpt-|o\d)/.test(id) ? "openai" : null;
-      if (!provider) continue;
+        : /^(?:gpt-|o\d)/.test(id) ? "openai" : "unknown";
+      if (provider === "unknown" && !/^\s*-\s+/.test(line)) continue;
       const family = provider === "anthropic" ? "claude"
-        : provider === "google" ? "gemini" : /^o\d/.test(id) ? "o-series" : "gpt";
+        : provider === "google" ? "gemini"
+        : provider === "openai" ? (/^o\d/.test(id) ? "o-series" : "gpt") : "unknown";
       models.set(modelId, {
         backend: this.name, provider, family, modelId,
         supportedEfforts: [], isDefault: false, hidden: false,

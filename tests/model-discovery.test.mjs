@@ -46,12 +46,15 @@ test("Cursor uses a supported non-interactive list flag and excludes Auto", asyn
     return {
       stdout: args[0] === "--help"
         ? "  --list-models   List available models\n"
-        : "Available models:\n- auto (Auto)\n- claude-opus-5-5 (Claude Opus)\n",
+        : "Available models:\n- auto (Auto)\n- claude-opus-5-5 (Claude Opus)\n- composer-3 (Composer)\n",
     };
   });
   const models = await adapter.discoverModels();
   assert.deepEqual(calls, [["cursor-agent", "--help"], ["cursor-agent", "--list-models"]]);
-  assert.deepEqual(models.map(({ modelId }) => modelId), ["claude-opus-5-5"]);
+  assert.deepEqual(models.map(({ modelId, provider, family }) => ({ modelId, provider, family })), [
+    { modelId: "claude-opus-5-5", provider: "anthropic", family: "claude" },
+    { modelId: "composer-3", provider: "unknown", family: "unknown" },
+  ]);
 });
 
 test("older Cursor versions defer to explicit candidates without starting an agent", async () => {
