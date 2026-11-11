@@ -19,6 +19,8 @@ Aider lists model IDs for OpenAI, Anthropic and Gemini. OpenCode reads the catal
 
 ## Framework Enforcement Skills
 
+Each pack includes boundary guidance for projects that select hexagonal architecture with a functional core. Apply the project’s architecture decision records alongside the framework rules.
+
 | Plugin | Language | Framework | Scope |
 |---|---|---|---|
 | `nextjs-standards` | `TypeScript` | `Next.js` | `all` |

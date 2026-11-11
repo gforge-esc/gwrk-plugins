@@ -1,6 +1,6 @@
 type: skill
 name: gin-standards
-version: 1.0.0
+version: 1.1.0
 description: Go Gin HTTP handler binding, context propagation, and error standards
 tier: enforcement
 scope: all
