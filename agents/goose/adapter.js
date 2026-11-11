@@ -28,6 +28,9 @@ export class GooseAdapter {
 
   dispatch(task) {
     const args = ["run", "--with-builtin", "developer", "-i", "-"];
+    if (task.model && task.model !== "default") {
+      args.push("--model", task.model);
+    }
     const stdin = task.stdin
       ? `${task.stdin}\n\n${task.prompt}`
       : task.prompt;
