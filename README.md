@@ -15,7 +15,20 @@ Antigravity CLI (`agy`) ships with gwrk. If you installed the retired `gemini` b
 
 ## Model Discovery
 
-Aider lists model IDs for OpenAI, Anthropic and Gemini. OpenCode reads the catalog for the current project. Cursor reads the catalog on CLI versions that expose model listing. Configure explicit model IDs for other providers or CLI versions with no catalog.
+Model catalogs describe availability on the current runner. They do not establish prompt compatibility or authorize promotion.
+
+| Backend | Catalog refresh | Missing catalog |
+|---|---|---|
+| `aider` | Provider-prefixed `--list-models` queries | Supply concrete provider-qualified candidates |
+| `opencode` | Project-local `opencode models` | Supply concrete provider-qualified candidates |
+| `cursor-agent` | `--list-models` when advertised by `--help` | Supply concrete candidates without starting an agent |
+| `goose` | Explicit runner candidates | Confirm the selected provider configuration |
+
+Built-in Antigravity, Claude and Codex discovery belongs to gwrk core. External adapters forward an explicitly selected model ID. Manifest defaults remain compatibility aliases. They are not qualified model pins.
+
+Use core qualification to test concrete candidates against versioned prompts and synthetic fixtures. Promotion requires deterministic gates and repeated runs. It also requires two independent frontier judges. Keep runner scope and observed identity with the evidence. Requalify after prompt or fixture changes. Tool and availability changes also require requalification.
+
+Discovery and synthetic adapter tests here make no inference calls. They neither promote a model nor establish a live account allocation.
 
 ## Framework Enforcement Skills
 
