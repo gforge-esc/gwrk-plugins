@@ -13,6 +13,7 @@ test("passes the selected model to the Goose CLI", () => {
     env: { GOOSE_PROVIDER: "ollama" },
   });
 
+  assert.equal(adapter.supportsModelForwarding, true);
   assert.equal(spec.command, "goose");
   assert.deepEqual(spec.args, [
     "run", "--with-builtin", "developer", "-i", "-", "--model", model,
