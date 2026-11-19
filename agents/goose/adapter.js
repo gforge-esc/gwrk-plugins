@@ -7,6 +7,7 @@ const execFileAsync = promisify(execFile);
 
 export class GooseAdapter {
   name = "goose";
+  supportsModelForwarding = true;
   contextFileName = ".goosehints";
 
   async isAvailable() {
