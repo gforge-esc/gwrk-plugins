@@ -7,7 +7,12 @@ const execFileAsync = promisify(execFile);
 
 export class OpenCodeAdapter {
   name = "opencode";
+  supportsModelForwarding = true;
   contextFileName = "AGENTS.md";
+
+  constructor(runCatalogCommand = execFileAsync) {
+    this.runCatalogCommand = runCatalogCommand;
+  }
 
   async isAvailable() {
     try {
@@ -16,6 +21,33 @@ export class OpenCodeAdapter {
     } catch {
       return false;
     }
+  }
+
+  async discoverModels({ projectRoot } = {}) {
+    const { stdout } = await this.runCatalogCommand("opencode", ["models"], {
+      cwd: projectRoot,
+      timeout: 10_000,
+      maxBuffer: 1_048_576,
+    });
+    const models = new Map();
+    for (const line of stdout.split("\n")) {
+      const modelId = line.trim();
+      if (!/^[a-z0-9._-]+\/[a-z0-9._:/-]+(?:#[a-z0-9._-]+)?$/i.test(modelId)) {
+        continue;
+      }
+      const id = modelId.split("#")[0].split("/").at(-1).toLowerCase();
+      const provider = id.startsWith("claude-") ? "anthropic"
+        : id.startsWith("gemini-") ? "google"
+        : /^(?:gpt-|o\d)/.test(id) ? "openai" : "unknown";
+      const family = provider === "anthropic" ? "claude"
+        : provider === "google" ? "gemini"
+        : provider === "openai" ? (/^o\d/.test(id) ? "o-series" : "gpt") : "unknown";
+      models.set(modelId, {
+        backend: this.name, provider, family, modelId,
+        supportedEfforts: [], isDefault: false, hidden: false,
+      });
+    }
+    return [...models.values()];
   }
 
   async syncGovernance(projectRoot, governance) {
@@ -31,9 +63,7 @@ export class OpenCodeAdapter {
     if (task.model && task.model !== "default") {
       args.push("--model", task.model);
     }
-    const stdin = task.stdin
-      ? `${task.stdin}\n\n${task.prompt}`
-      : task.prompt;
+    const stdin = [...new Set([task.stdin, task.prompt].filter(Boolean))].join("\n\n");
     return {
       command: "opencode",
       args,
