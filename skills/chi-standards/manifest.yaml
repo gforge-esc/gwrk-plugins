@@ -1,6 +1,6 @@
 type: skill
 name: chi-standards
-version: 1.0.0
+version: 1.1.0
 description: Go Chi stdlib HTTP handler composition, middleware, and context standards
 tier: enforcement
 scope: all

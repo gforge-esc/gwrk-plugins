@@ -15,3 +15,11 @@ React components must derive state during render and avoid effect-driven synchro
 - Use native `<input>` and `<dialog>` elements before custom ARIA roles.
 - Provide visible or accessible labels for every form control and icon button.
 - Make sure every interactive control works with keyboard navigation alone.
+
+## Hexagonal Architecture
+
+Apply these rules when the project selects hexagonal architecture with a functional core.
+
+- Treat components and hooks as presentation adapters. Pass typed inputs to application functions and map results to view state.
+- Inject browser storage and network adapters at the application entry point. Keep domain transitions free of React state and browser APIs.
+- Test domain transitions with plain values. Use component tests for interaction and accessible output.
