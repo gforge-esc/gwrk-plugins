@@ -7,7 +7,12 @@ const execFileAsync = promisify(execFile);
 
 export class AiderAdapter {
   name = "aider";
+  supportsModelForwarding = true;
   contextFileName = "CONVENTIONS.md";
+
+  constructor(runCatalogCommand = execFileAsync) {
+    this.runCatalogCommand = runCatalogCommand;
+  }
 
   async isAvailable() {
     try {
@@ -16,6 +21,32 @@ export class AiderAdapter {
     } catch {
       return false;
     }
+  }
+
+  async discoverModels({ projectRoot } = {}) {
+    const catalogs = await Promise.all([
+      ["openai", "openai", "gpt"],
+      ["anthropic", "anthropic", "claude"],
+      ["gemini", "google", "gemini"],
+    ].map(async ([prefix, provider, family]) => {
+      const { stdout } = await this.runCatalogCommand("aider", ["--list-models", `${prefix}/`], {
+        cwd: projectRoot,
+        timeout: 10_000,
+        maxBuffer: 1_048_576,
+      });
+      const models = [];
+      for (const line of stdout.split("\n")) {
+        const modelId = line.match(/^\s*-\s+.+\(([^()\s]+)\)\s*$/)?.[1];
+        if (!modelId?.startsWith(`${prefix}/`)) continue;
+        models.push({
+          backend: this.name, provider,
+          family: prefix === "openai" && /^openai\/o\d/.test(modelId) ? "o-series" : family,
+          modelId, supportedEfforts: [], isDefault: false, hidden: false,
+        });
+      }
+      return models;
+    }));
+    return [...new Map(catalogs.flat().map((model) => [model.modelId, model])).values()];
   }
 
   async syncGovernance(projectRoot, governance) {
@@ -38,9 +69,7 @@ export class AiderAdapter {
       args.push("--model", task.model);
     }
     args.push("--message-file", "-");
-    const stdin = task.stdin
-      ? `${task.stdin}\n\n${task.prompt}`
-      : task.prompt;
+    const stdin = [...new Set([task.stdin, task.prompt].filter(Boolean))].join("\n\n");
     return {
       command: "aider",
       args,
