@@ -1,6 +1,6 @@
 # gwrk-plugins
 
-The companion plugin registry extends gwrk with external agent adapters, polyglot framework enforcement packs and review strategies. It aligns with core candidate 1.6.0-beta.2. Blocked: none.
+The companion plugin registry extends gwrk with external agent adapters, polyglot framework enforcement packs and review strategies. It targets published core `1.6.0-beta.2`. Blocked: none.
 
 ## Prominent Links
 
@@ -105,11 +105,22 @@ Core retired the Gemini CLI backend. Antigravity CLI (`agy`) ships bundled with 
 
 ## Core Compatibility
 
-This repository requires gwrk core `1.6.0-beta.2` or candidate commit `bb15497bfeff881e4597972438e586ca98100b56`.
+This repository requires published gwrk core `1.6.0-beta.2` or later. The `1.6.0-beta.3` portal navigation repair awaits review and publication.
 
 Published release `1.6.0-beta.1` from November 6 does not include new core contracts. It lacks policy selection and agent registry contracts. It also lacks model discovery.
 
 Do not invent a minimum-version manifest field or verified release status.
+
+## Documentation Checks
+
+Run the offline Markdown link check and adapter tests with Node 22:
+
+```bash
+node scripts/check-doc-links.mjs
+node --test tests/*.test.mjs
+```
+
+The check verifies relative files and Markdown heading anchors. It supports document fragments and reference links. Negative fixtures cover missing files and missing anchors. External URLs are not fetched. GitHub Actions runs both checks for pull requests and pushes to `main`.
 
 ## Registry Catalog
 
