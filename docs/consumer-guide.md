@@ -8,7 +8,7 @@ This guide explains how users and agents discover and install plugins. It covers
 |---|---|---|
 | Hosted Portal | https://gwrk.gforge.ai | Project onboarding and dashboard |
 | Core Repository | https://github.com/gforge-esc/gwrk | Core toolchain and issues |
-| Releases | https://github.com/gforge-esc/gwrk/releases | Verified candidate tarballs |
+| Releases | https://github.com/gforge-esc/gwrk/releases | Published release assets |
 | Plugin Registry | https://github.com/gforge-esc/gwrk-plugins | Catalog repository |
 
 ## Navigation
@@ -94,7 +94,7 @@ Core detects project languages and frameworks during initialization.
 
 The runtime matches installed skills against project metadata. It activates matching framework packs automatically.
 
-Framework skills enforce hexagonal architecture with a functional core. Core domain logic must stay isolated from HTTP frameworks and database drivers.
+Framework skills compose with the selected project architecture. For hexagonal projects with a functional core, domain logic stays isolated from HTTP frameworks and database drivers. This guidance does not certify existing code conformance.
 
 Project decision records in `docs/decisions/` compose directly with framework standards.
 
@@ -117,8 +117,8 @@ Model promotion requires core qualification. Candidates must pass deterministic 
 The legacy Gemini CLI backend was retired. Projects must migrate to the Antigravity CLI backend (`agy`).
 
 1. Remove the retired plugin: `gwrk plugin remove gemini`.
-2. Run project initialization: `gwrk init --context-only`.
-3. Select `agy` as the active backend.
+2. Run full project initialization: `gwrk init`.
+3. Select `agy` as the active backend. Context-only initialization preserves agent settings and cannot perform this migration.
 4. Review available models: `agy models`.
 
 ## Offline and Local Testing

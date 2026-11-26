@@ -9,7 +9,8 @@ The companion plugin registry extends gwrk with external agent adapters, polyglo
 | Hosted Portal | https://gwrk.gforge.ai | Account access and project overview |
 | Core Repository | https://github.com/gforge-esc/gwrk | Core gwrk engine and issue tracking |
 | Core Releases | https://github.com/gforge-esc/gwrk/releases | Packaged tarballs and install receipts |
-| Core Consumer Guide | https://github.com/gforge-esc/gwrk/blob/main/docs/site/consumer-guide.md | Target project runtime guidance |
+| Core Consumer Guide | https://github.com/gforge-esc/gwrk/blob/main/docs/site/getting-started.md | Target project runtime guidance |
+| Core Agent Guide | https://github.com/gforge-esc/gwrk/blob/main/docs/site/agent-guide.md | Agent startup in a target project |
 
 ## Guides
 
@@ -54,7 +55,7 @@ The profile detector scans project files to identify languages and frameworks.
 
 Core enforcement runtime filters skills using declared language and framework values. Project decision records in `docs/decisions/` compose alongside framework rules.
 
-Framework packs enforce hexagonal architecture boundaries. Domain logic stays isolated from external adapters.
+Framework packs supply guidance for the selected architecture. For hexagonal projects, domain logic stays isolated from external adapters. Installing a pack does not certify code conformance.
 
 Project configuration in `.gwrk/plugins.yaml` supports disable lists and override mappings.
 
@@ -69,7 +70,7 @@ override:
 
 File `registry.json` tracks versions and paths. It records SHA-256 digests.
 
-Core computes directory digests deterministically across all tracked files. Excluded entries include `.git` and `node_modules`. They also exclude `.gwrk-source.json` and `.DS_Store`.
+Core computes directory digests deterministically across plugin files. Excluded entries include `.git` and `node_modules`. They also exclude `.gwrk-source.json` and `.DS_Store`.
 
 Generate the catalog with `gwrk plugin index [dir]`.
 
