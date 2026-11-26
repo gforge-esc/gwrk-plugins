@@ -97,7 +97,7 @@ The loader accepts an exported adapter instance or a class with a zero-argument 
 | `contextFileName` | Governance context filename |
 | `syncGovernance(projectRoot, governance)` | Write project governance for the backend |
 | `dispatch(task)` | Return command, arguments, stdin and environment |
-| `parseResult(stdout, stderr, rawExitCode, durationMs)` | Normalize the CLI result |
+| `parseResult(stdout, stderr, rawExitCode)` | Normalize the CLI result |
 | `discoverModels(context)` | Optional catalog discovery without inference |
 
 `dispatch` describes an invocation. It does not launch a process. WorkflowRuntime owns task execution. The application-facing `AgentPort` wraps routing and execution and is not the external adapter contract.
